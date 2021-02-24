@@ -24,8 +24,8 @@ public class Ticket {
 	private int userId;
 	private Date dateOfJourney;
 	private String typeOfTicket;
-	private float amount;
+	private double amount;
 	private String food;
-	private float totalAmount;
+	private double totalAmount;
 	private String status;
 }

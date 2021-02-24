@@ -15,6 +15,6 @@ public class TicketRequestDto {
     private int seatNo;
     private Date date;
     private String typeOfTicket;
-    private double amount;
+    private String food;
 
 }

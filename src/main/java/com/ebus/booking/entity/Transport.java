@@ -12,10 +12,10 @@ import javax.persistence.Id;
 public class Transport {
 	
 	@Id
-	private int transportid;
+	private int transportId;
 	private String transportType;
-	private String classType;
 	private String source;
 	private String destination;
-	private float price;
+	private float price_v;
+	private float price_n;
 }
