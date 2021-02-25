@@ -9,11 +9,10 @@ import java.util.Date;
 @Setter
 public class TicketRequestDto {
 
-    private String source;
-    private String destination;
     private int age;
+    private String personName;
     private int seatNo;
-    private Date date;
+    private Date dateOfJourney;
     private String typeOfTicket;
     private String food;
 

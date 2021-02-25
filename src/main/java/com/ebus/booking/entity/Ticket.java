@@ -6,7 +6,6 @@ import lombok.Setter;
 import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
@@ -15,8 +14,7 @@ import javax.persistence.Id;
 public class Ticket {
 	
 	@Id
-	@GeneratedValue
-	private int ticketId;
+	private String ticketId;
 	private String source;
 	private String destination;
 	private int age;
@@ -26,6 +24,5 @@ public class Ticket {
 	private String typeOfTicket;
 	private double amount;
 	private String food;
-	private double totalAmount;
 	private String status;
 }

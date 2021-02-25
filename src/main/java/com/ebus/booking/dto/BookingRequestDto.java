@@ -14,5 +14,7 @@ public class BookingRequestDto {
     private String address;
     private int mobileNumber;
     private int age;
+    private String source;
+    private String destination;
     List<TicketRequestDto> ticketRequestDtoList;
 }
