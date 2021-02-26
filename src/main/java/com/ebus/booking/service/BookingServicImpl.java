@@ -120,4 +120,16 @@ public class BookingServicImpl implements BookingService {
             sb.append(chars.charAt(rnd.nextInt(chars.length())));
         return sb.toString();
     }
+    
+    public String cancelTicket(String ticketid,Integer userId) {
+		if(ticketid==null) {
+			ticketRepository.cancelTicketByUserId(userId);
+		}
+		else {
+			ticketRepository.cancelTicketByTicketId(ticketid);
+		}
+		return "Successfully canceled ";
+	}
+    
+    
 }
