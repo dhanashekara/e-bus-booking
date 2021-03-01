@@ -1,5 +1,7 @@
 package com.ebus.booking.repository;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -20,4 +22,6 @@ public interface TicketRepository extends JpaRepository<Ticket, String> {
 	@Modifying
 	@Query("update Ticket t set t.status ='canceled' where t.ticketId=?1")
 	public void cancelTicketByTicketId(String ticketid);
+	
+	List<Ticket> findByUserId(int userId);
 }
