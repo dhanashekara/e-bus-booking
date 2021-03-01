@@ -5,6 +5,7 @@ import com.ebus.booking.dto.BookingRequestDto;
 import com.ebus.booking.dto.BookingResponseDto;
 import com.ebus.booking.dto.TicketRequestDto;
 import com.ebus.booking.dto.TicketResponseDto;
+import com.ebus.booking.dto.TicketStatusResponseDto;
 import com.ebus.booking.entity.Ticket;
 import com.ebus.booking.entity.Transport;
 import com.ebus.booking.entity.User;
@@ -121,14 +122,17 @@ public class BookingServicImpl implements BookingService {
         return sb.toString();
     }
     
-    public String cancelTicket(String ticketid,Integer userId) {
+    public TicketStatusResponseDto cancelTicket(String ticketid,Integer userId) {
+    	
 		if(ticketid==null) {
 			ticketRepository.cancelTicketByUserId(userId);
 		}
 		else {
 			ticketRepository.cancelTicketByTicketId(ticketid);
 		}
-		return "Successfully canceled ";
+		TicketStatusResponseDto ticketStatusResponseDto = new TicketStatusResponseDto();
+				ticketStatusResponseDto.setTicketStatus("Successfully canceled");
+		return ticketStatusResponseDto;
 	}
     
     

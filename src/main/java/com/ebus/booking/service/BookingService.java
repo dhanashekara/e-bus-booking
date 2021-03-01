@@ -1,12 +1,14 @@
 package com.ebus.booking.service;
 
+import org.springframework.stereotype.Service;
+
 import com.ebus.booking.Exception.BookingException;
 import com.ebus.booking.dto.BookingRequestDto;
 import com.ebus.booking.dto.BookingResponseDto;
-import org.springframework.stereotype.Service;
+import com.ebus.booking.dto.TicketStatusResponseDto;
 
 @Service
 public interface BookingService {
     BookingResponseDto bookTicket(BookingRequestDto bookingRequestDto) throws BookingException;
-    public String cancelTicket(String ticketid,Integer userid);
+    public TicketStatusResponseDto cancelTicket(String ticketid,Integer userid);
 }

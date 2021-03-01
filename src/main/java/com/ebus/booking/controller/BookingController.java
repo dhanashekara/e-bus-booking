@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ebus.booking.Exception.BookingException;
 import com.ebus.booking.dto.BookingRequestDto;
 import com.ebus.booking.dto.BookingResponseDto;
+import com.ebus.booking.dto.TicketStatusResponseDto;
 import com.ebus.booking.service.BookingService;
 
 @RestController
@@ -31,9 +32,9 @@ public class BookingController {
     }
     
     @PutMapping("/ticket/cancel")
-    public ResponseEntity<String> cancelTicket(@RequestParam(value="ticketid",required=false) String ticketid,
+    public ResponseEntity<TicketStatusResponseDto> cancelTicket(@RequestParam(value="ticketid",required=false) String ticketid,
     		@RequestParam(value="userId",required=false) Integer userId) {
-    	String response =bookingService.cancelTicket(ticketid,userId);
+    	TicketStatusResponseDto response =bookingService.cancelTicket(ticketid,userId);
     	return new ResponseEntity<>(response,HttpStatus.OK);
     }
 }
